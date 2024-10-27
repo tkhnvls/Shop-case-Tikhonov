@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM_JS. Считываем информацию из DOM</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">
+            <img src="../icons/home.png" alt="Главная" class="home-icon" id="home-icon">
+        </a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="products.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="checkout.html">Оформление заказа</a></li>
+                <li class="nav-item"><a class="nav-link active" href="passport.html">Паспортные данные</a></li>
+                <li class="nav-item"><a class="nav-link" href="change_names.html">Изменить имя</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">О нас</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Контакты</a></li>
+                <li class="nav-item"><a class="nav-link" href="form.html">Форма</a></li>
+                <li class="nav-item"><a class="nav-link" href="algo_solution.html">Алгоритм</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h2>Паспортные данные</h2>
+        <br>
+        <div>
+            <h3>Страница 1</h3>
+            <br>
+            <p>Паспорт выдан: УМВД России по Калининградской области</p>
+            <p>Дата выдачи: 28.04.2023</p>
+            <p>Код подразделения: 3934-0343</p>
+            <p>Серия и номер: 2343 984585</p>
+        </div>
+        <br>
+        <div>
+            <h3>Страница 2</h3>
+            <br>
+            <p id="lastName">Фамилия: Тихонов</p>
+            <p id="firstName">Имя: Елизавета</p>
+            <p id="dateOfBirth">Дата рождения: 12.08.2005</p>
+        </div>
+        <br>
+        <h3>Скрин задания</h3>
+        <a href="../images/DOM_JS_TASK.png" target="_blank">
+            <img src="../images/DOM_JS_TASK.png" alt="DOM_JS_TASK" class="img-fluid" style="width: 100px; height: auto;">
+        </a>
+    </div>
+    <script>
+        const lastName = localStorage.getItem('lastName') || 'Тихонов';
+        const firstName = localStorage.getItem('firstName') || 'Елизавета';
+        const dateOfBirth = '12.08.2005';
+
+        document.getElementById('lastName').innerText = 'Фамилия: ' + lastName;
+        document.getElementById('firstName').innerText = 'Имя: ' + firstName;
+        document.getElementById('dateOfBirth').innerText = 'Дата рождения: ' + dateOfBirth;
+    </script>
+</body>
+</html>

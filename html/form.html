@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подтверждение</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">
+            <img src="../icons/home.png" alt="Главная" class="home-icon" id="home-icon">
+        </a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="products.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="checkout.html">Оформление заказа</a></li>
+                <li class="nav-item"><a class="nav-link" href="passport.html">Паспортные данные</a></li>
+                <li class="nav-item"><a class="nav-link" href="change_names.html">Изменить имя</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">О нас</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Контакты</a></li>
+                <li class="nav-item"><a class="nav-link active" href="form.html">Форма</a></li>
+                <li class="nav-item"><a class="nav-link" href="algo_solution.html">Алгоритм</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container" style="background-color: #181a1b; color: white;">
+        <h2>Навигация</h2>
+        <a class="nav-link" href="#robotCheck">1. Вы робот?</a>
+        <a class="nav-link" href="#contactForm">2. Контактная информация</a>
+        <a class="nav-link" href="#originalDataForm">3. Исходная форма данных</a>
+        <br>
+        <h2 id="robotCheck">Вы робот?</h2>
+        <form id="taskForm">
+            <div class="form-group">
+                <label for="taskDescription">Докажите, что вы не робот:</label>
+                <input type="text" class="form-control" name="taskDescription" value="Дано число X. Определить, принадлежит ли это число заданному промежутку [a, b]." readonly>
+            </div>
+            <div class="form-group">
+                <label for="a">A:</label>
+                <input type="number" class="form-control" name="a" value="10">
+            </div>
+            <div class="form-group">
+                <label for="b">B:</label>
+                <input type="number" class="form-control" name="b" value="20">
+            </div>
+            <div class="form-group">
+                <label for="x">X:</label>
+                <input type="number" class="form-control" name="x" value="15">
+            </div>
+            <button type="button" class="btn btn-primary" id="verify">Потвердить</button>
+            <button type="submit" class="btn btn-success" id="submit">Отправить</button>
+        </form>
+        <br>
+        <h3 id="contactForm">Контактная информация</h3>
+        <form>
+            <div class="form-group">
+                <label for="lastName">Фамилия:</label>
+                <input type="text" class="form-control" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="firstName">Имя:</label>
+                <input type="text" class="form-control" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="group">Группа:</label>
+                <input type="text" class="form-control" name="group" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Мобильный телефон:</label>
+                <input type="tel" class="form-control" name="mobile" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Электронная почта:</label>
+                <input type="email" class="form-control" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Дата:</label>
+                <input type="date" class="form-control" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Пароль:</label>
+                <input type="password" class="form-control" name="password" required>
+            </div>
+            <div class="form-group">
+                <input type="hidden" name="hiddenField" value="defaultValue">
+            </div>
+            <div class="form-group">
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="subscribe" value="yes">
+                    <span class="checkbox-btn"></span>
+                </label>
+                <label for="subscribe">Подписаться на рассылку</label>
+            </div>
+            <button type="submit" class="btn btn-success" id="submit">Отправить</button>
+        </form>
+        <br>
+        <h3 id="originalDataForm">Исходная форма данных</h3>
+        <form>
+            <div class="form-group">
+                <label for="orderDescription">Описание заказа:</label>
+                <input type="text" class="form-control" name="orderDescription" required>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Количество:</label>
+                <input type="number" class="form-control" name="quantity" required>
+            </div>
+            <div class="form-group">
+                <label>Обратная связь:</label>
+                <div>
+                    <label class="custom-radio">
+                        <input type="radio" name="feedback" value="positive" required>
+                        <span class="radio-btn"></span>
+                        Положительная
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="feedback" value="negative" required>
+                        <span class="radio-btn"></span>
+                        Отрицательная
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="comments">Комментарии:</label>
+                <textarea class="form-control" name="comments"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success" id="submit">Отправить</button>
+        </form>        
+    </div>
+    <button id="scrollToTop" class="btn btn-secondary" style="position: fixed; bottom: 20px; right: 20px; background-color: #2c2f32; color: #4CAF50; border: none;">𖤂</button>
+    <script>
+        document.getElementById('verify').addEventListener('click', function() {
+            let a = parseInt(document.querySelector('input[name="a"]').value);
+            let b = parseInt(document.querySelector('input[name="b"]').value);
+            let x = parseInt(document.querySelector('input[name="x"]').value);
+            let low = Math.min(a, b);
+            let high = Math.max(a, b);
+            let resultText;
+            if (x >= low && x <= high) {
+                resultText = "Вы не робот! X принадлежит заданному промежутку [a, b].";
+            } else {
+                resultText = "Вы робот! X не принадлежит заданному промежутку [a, b].";
+            }
+            alert(resultText);
+        });
+
+        document.getElementById('submit').addEventListener('click', function() {
+            alert("Отправлено!");
+        });
+
+        document.getElementById('scrollToTop').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
