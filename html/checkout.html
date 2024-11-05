@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление заказа</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">
+            <img src="../icons/home.png" alt="Главная" class="home-icon" id="home-icon">
+        </a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="products.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link active" href="checkout.html">Оформление заказа</a></li>
+                <li class="nav-item"><a class="nav-link" href="passport.html">Паспортные данные</a></li>
+                <li class="nav-item"><a class="nav-link" href="change_names.html">Изменить имя</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">О нас</a></li>
+                <li class="nav-item"><a class="nav-link" href="form.html">Форма</a></li>
+                <li class="nav-item"><a class="nav-link" href="algo_solution.html">Алгоритм</a></li>
+                <li class="nav-item"><a class="nav-link" href="form.html#originalDataForm">Обратная связь</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://vk.com">VK</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://web.telegram.org" target="_blank">Telegram</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h2>Оформление заказа</h2>
+        <form id="checkoutForm" action="https://ya.ru/submit" method="POST">
+            <div class="form-group">
+                <label for="lastName">Фамилия:</label>
+                <input type="text" class="form-control" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="firstName">Имя:</label>
+                <input type="text" class="form-control" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="group">Группа:</label>
+                <input type="text" class="form-control" name="group" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Мобильный телефон:</label>
+                <input type="tel" class="form-control" name="mobile" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Электронная почта:</label>
+                <input type="email" class="form-control" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Дата отправки сообщения:</label>
+                <input type="date" class="form-control" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Пароль:</label>
+                <input type="password" class="form-control" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Скрытое поле:</label>
+                <input type="hidden" name="hiddenField" value="Пол">
+            </div>
+            <div class="form-group">
+                <label>Способ доставки:</label>
+                <div>
+                    <label class="custom-radio">
+                        <input type="radio" name="delivery" value="courier" required>
+                        <span class="radio-btn"></span>
+                        Курьером
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="delivery" value="pickup" required>
+                        <span class="radio-btn"></span>
+                        Самовывоз
+                    </label>
+                </div>
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="subscribe" value="yes">
+                    <span class="checkbox-btn"></span>
+                </label>
+                <label for="subscribe"> Согласен с условиями</label>
+            </div>
+            <button type="submit" class="btn btn-success" id="submit">Отправить запрос</button>
+        </form>
+    </div>
+    <script src="../js/checkout.js"></script>
+</body>
+</html>
