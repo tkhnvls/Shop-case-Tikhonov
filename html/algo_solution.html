@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Решение алгоритмической задачи</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">
+            <img src="../icons/home.png" alt="Главная" class="home-icon" id="home-icon">
+        </a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="products.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="checkout.html">Оформление заказа</a></li>
+                <li class="nav-item"><a class="nav-link" href="passport.html">Паспортные данные</a></li>
+                <li class="nav-item"><a class="nav-link" href="change_names.html">Изменить имя</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">О нас</a></li>
+                <li class="nav-item"><a class="nav-link" href="form.html">Форма</a></li>
+                <li class="nav-item"><a class="nav-link active" href="algo_solution.html">Алгоритм</a></li>
+                <li class="nav-item"><a class="nav-link" href="form.html#originalDataForm">Обратная связь</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://vk.com">VK</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://web.telegram.org" target="_blank">Telegram</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container" style="background-color: #181a1b; color: white;">
+        <h2>Решение алгоритмической задачи</h2>
+        <form id="taskForm">
+            <div class="form-group">
+                <input type="text" class="form-control" name="taskDescription" value="Дано число X. Определить, принадлежит ли это число заданному промежутку [a, b]." readonly>
+            </div>
+            <div class="form-group">
+                <label for="a">A:</label>
+                <input type="number" class="form-control" name="a" value="10">
+            </div>
+            <div class="form-group">
+                <label for="b">B:</label>
+                <input type="number" class="form-control" name="b" value="20">
+            </div>
+            <div class="form-group">
+                <label for="x">X:</label>
+                <input type="number" class="form-control" name="x" value="15">
+            </div>
+            <button type="button" class="btn btn-primary" id="verify">Потвердить</button>
+            <button type="submit" class="btn btn-success" id="submit">Отправить</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('verify').addEventListener('click', function() {
+            let a = parseInt(document.querySelector('input[name="a"]').value);
+            let b = parseInt(document.querySelector('input[name="b"]').value);
+            let x = parseInt(document.querySelector('input[name="x"]').value);
+            let low = Math.min(a, b);
+            let high = Math.max(a, b);
+            let resultText;
+            if (x >= low && x <= high) {
+                resultText = "X принадлежит заданному промежутку [a, b].";
+            } else {
+                resultText = "X не принадлежит заданному промежутку [a, b].";
+            }
+            alert(resultText);
+        });
+
+        document.getElementById('submit').addEventListener('click', function() {
+            alert("Отправлено!");
+        });
+    </script>
+</body>
+</html>

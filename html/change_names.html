@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM_JS. Изменение паспортных данных</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">
+            <img src="../icons/home.png" alt="Главная" class="home-icon" id="home-icon">
+        </a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="products.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="checkout.html">Оформление заказа</a></li>
+                <li class="nav-item"><a class="nav-link" href="passport.html">Паспортные данные</a></li>
+                <li class="nav-item"><a class="nav-link active" href="change_names.html">Изменить имя</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">О нас</a></li>
+                <li class="nav-item"><a class="nav-link" href="form.html">Форма</a></li>
+                <li class="nav-item"><a class="nav-link" href="algo_solution.html">Алгоритм</a></li>
+                <li class="nav-item"><a class="nav-link" href="form.html#originalDataForm">Обратная связь</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://vk.com">VK</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://web.telegram.org" target="_blank">Telegram</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h2>Изменение паспортных данных</h2>
+        <div>
+            <p id="lastName">Фамилия: Тихонов</p>
+            <p id="firstName">Имя: Елизавета</p>
+            <p id="dateOfBirth">Дата рождения: 12.08.2005</p>
+        </div>
+        <button id="changeButton" class="btn btn-primary">Поменять на латиницу</button>
+    </div>
+    <script src="../js/change_name.js"></script>
+</body>
+</html>
