@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM_JS. Считываем информацию из DOM</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">
+            <img src="../icons/home.png" alt="Главная" class="home-icon" id="home-icon">
+        </a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="products.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="checkout.html">Оформление заказа</a></li>
+                <li class="nav-item"><a class="nav-link active" href="passport.html">Паспортные данные</a></li>
+                <li class="nav-item"><a class="nav-link" href="change_names.html">Изменить имя</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">О нас</a></li>
+                <li class="nav-item"><a class="nav-link" href="form.html">Форма</a></li>
+                <li class="nav-item"><a class="nav-link" href="algo_solution.html">Алгоритм</a></li>
+                <li class="nav-item"><a class="nav-link" href="form.html#originalDataForm">Обратная связь</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://vk.com">VK</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://web.telegram.org" target="_blank">Telegram</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container" style="height: 1000px;">
+        <div class="passport-container">
+            <div class="page-1">
+                <div class="header">
+                    <p class="organization">УМВД РОССИИ ПО КАЛИНИНГРАДСКОЙ ОБЛАСТИ</p>
+                    <p class="date-number">
+                        28.04.2023 <span class="number">150-144</span>
+                    </p>
+                </div>
+                <div class="signatures-container">
+                    <img src="../images/subdivision-signature.png" alt="Subdivision Signature" class="signature" style="margin-top: -30px;">
+                    <img src="../images/self-signature.png" alt="Self Signature" class="signature">
+                </div>
+            </div>
+            <div class="page-2">
+                <img src="../images/passport-photo.png" alt="Passport Photo" class="passport-photo">
+                <div class="name-section">
+                    <p id="lastName" class="name">ТИХОНОВ</p>
+                    <p id="firstName" class="name" style="margin-top: 40px;">ЕЛИЗАВЕТА</p>
+                    <p class="middle-name" style="margin-top: 10px;">ВИТАЛЬЕВНА</p>
+                    <p class="birth-info" style="margin-left: -190px; margin-top: -10px;">ЖЕН.</p>
+                    <p id="dateOfBirth" class="birth-info" style="margin-left: 40px; margin-top: -25px;">12.08.2008</p>
+                    <p class="city">ГОР. КАЛИНИНГРАД</p>
+                    <p class="region">КАЛИНИНГРАДСКОЙ ОБЛ.</p>
+                </div>
+            </div>
+            <div style="margin-top: 100px;">
+                <h3>Скрин задания</h3>
+                <a href="../images/DOM_JS_TASK.png" target="_blank">
+                    <img src="../images/DOM_JS_TASK.png" alt="DOM_JS_TASK" class="img-fluid" style="width: 100px; height: auto;">
+                </a>
+            </div>
+        </div>
+    </div>                 
+    <script>
+        const lastName = localStorage.getItem('lastName') || 'Тихонов';
+        const firstName = localStorage.getItem('firstName') || 'Елизавета';
+        const dateOfBirth = localStorage.getItem('dateOfBirth') || '12.08.2008';
+
+        document.getElementById('lastName').innerText = lastName;
+        document.getElementById('firstName').innerText = firstName;
+        document.getElementById('dateOfBirth').innerText = dateOfBirth;
+    </script>
+</body>
+</html>

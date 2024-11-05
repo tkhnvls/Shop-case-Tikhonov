@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог товаров</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">
+            <img src="../icons/home.png" alt="Главная" class="home-icon" id="home-icon">
+        </a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link active" href="products.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="checkout.html">Оформление заказа</a></li>
+                <li class="nav-item"><a class="nav-link" href="passport.html">Паспортные данные</a></li>
+                <li class="nav-item"><a class="nav-link" href="change_names.html">Изменить имя</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">О нас</a></li>
+                <li class="nav-item"><a class="nav-link" href="form.html">Форма</a></li>
+                <li class="nav-item"><a class="nav-link" href="algo_solution.html">Алгоритм</a></li>
+                <li class="nav-item"><a class="nav-link" href="form.html#originalDataForm">Обратная связь</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://vk.com">VK</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://web.telegram.org" target="_blank">Telegram</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <h2>Каталог товаров</h2>
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link active" href="#" data-category="category1">Категория 1</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-category="category2">Категория 2</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-category="category3">Категория 3</a></li>
+        </ul>
+        <div class="tab-content" id="product-list">
+            <div class="tab-pane fade show active" data-category="category1">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a href="product1.html"><img src="../images/product1.jpg" alt="Товар 1" class="img-fluid"></a>
+                        <p>Чехол на iPhone 15 Pro Кожзам - 3 000₽</p>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="product2.html"><img src="../images/product2.jpg" alt="Товар 2" class="img-fluid"></a>
+                        <p>Картхолдер с MagSafe Кожзам - 1 500₽</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" data-category="category2">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a href="product3.html"><img src="../images/product3.jpg" alt="Товар 3" class="img-fluid"></a>
+                        <p>PowerBank с MagSafe - 5 000₽</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" data-category="category3">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a href="product4.html"><img src="../images/product4.jpg" alt="Товар 4" class="img-fluid"></a>
+                        <p>Ремешок Apple Watch Ultra / Ultra 2 - 14 000₽</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3>Акции и скидки</h3>
+        <table class="discount-table">
+            <tr>
+                <td>
+                    <a href="product1.html">
+                        <img src="../icons/discount.png" alt="Discount Icon">
+                    </a>
+                </td>
+                <td>Скидка 20% на все товары категории 1!</td>
+            </tr>
+        </table>    
+    </div>
+    <script src="../js/category-swipe.js"></script>
+</body>
+</html>
