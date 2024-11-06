@@ -153,20 +153,42 @@ document.getElementById('verify').addEventListener('click', function() {
     }
     alert(resultText);
 });
-    document.getElementById('submit').addEventListener('click', function() {
-        let a = document.querySelector('input[name="a"]').value;
-        let b = document.querySelector('input[name="b"]').value;
-        let x = document.querySelector('input[name="x"]').value;
-        let result = (x >= Math.min(a, b) && x <= Math.max(a, b)) ? "X принадлежит заданному диапазону" : "X не принадлежит заданному диапазону";
-        
-        let url = `https://www.bing.com/search?q=search&formulation=Принадлежит+ли+целое+X+диапазону+A-B%3F+Если+принадлежит+-+отправить+все+на+сервер&a=${a}&b=${b}&c=${x}&result%22=${encodeURIComponent(result)}`;
-        
-        window.open(url);
-    });
-    
-    document.getElementById('scrollToTop').addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+
+document.getElementById('submit').addEventListener('click', function() {
+    let a = document.querySelector('input[name="a"]').value;
+    let b = document.querySelector('input[name="b"]').value;
+    let x = document.querySelector('input[name="x"]').value;
+    let result = (x >= Math.min(a, b) && x <= Math.max(a, b)) ? "X принадлежит заданному диапазону" : "X не принадлежит заданному диапазону";
+    let url = `https://www.bing.com/search?q=search&formulation=Принадлежит+ли+целое+X+диапазону+A-B%3F+Если+принадлежит+-+отправить+все+на+сервер&a=${a}&b=${b}&c=${x}&result%22=${encodeURIComponent(result)}`;
+    window.open(url, '_blank');
+});
+
+document.getElementById('submitContact').addEventListener('click', function(event) {
+    event.preventDefault();
+    let lastName = document.querySelector('input[name="lastName"]').value;
+    let firstName = document.querySelector('input[name="firstName"]').value;
+    let group = document.querySelector('input[name="group"]').value;
+    let mobile = document.querySelector('input[name="mobile"]').value;
+    let email = document.querySelector('input[name="email"]').value;
+    let date = document.querySelector('input[name="date"]').value;
+    let subscribe = document.querySelector('input[name="subscribe"]').checked ? "yes" : "no";
+    let url = `https://example.com/contact?lastName=${encodeURIComponent(lastName)}&firstName=${encodeURIComponent(firstName)}&group=${encodeURIComponent(group)}&mobile=${encodeURIComponent(mobile)}&email=${encodeURIComponent(email)}&date=${encodeURIComponent(date)}&subscribe=${subscribe}`;
+    window.open(url, '_blank');
+});
+
+document.getElementById('submitFeedback').addEventListener('click', function(event) {
+    event.preventDefault();
+    let orderDescription = document.querySelector('input[name="orderDescription"]').value;
+    let quantity = document.querySelector('input[name="quantity"]').value;
+    let feedback = document.querySelector('input[name="feedback"]:checked').value;
+    let comments = document.querySelector('textarea[name="comments"]').value;
+    let url = `https://example.com/feedback?orderDescription=${encodeURIComponent(orderDescription)}&quantity=${quantity}&feedback=${feedback}&comments=${encodeURIComponent(comments)}`;
+    window.open(url, '_blank');
+});
+
+document.getElementById('scrollToTop').addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
     </script>
 </body>
 </html>
