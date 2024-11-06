@@ -139,6 +139,20 @@ document.getElementById('verify').addEventListener('click', function() {
     }
     alert(resultText);
 });
+document.getElementById('verify').addEventListener('click', function() {
+    let a = parseInt(document.querySelector('input[name="a"]').value);
+    let b = parseInt(document.querySelector('input[name="b"]').value);
+    let x = parseInt(document.querySelector('input[name="x"]').value);
+    let low = Math.min(a, b);
+    let high = Math.max(a, b);
+    let resultText;
+    if (x >= low && x <= high) {
+        resultText = "Вы не робот! X принадлежит заданному промежутку [a, b].";
+    } else {
+        resultText = "Вы робот! X не принадлежит заданному промежутку [a, b].";
+    }
+    alert(resultText);
+});
     document.getElementById('submit').addEventListener('click', function() {
         let a = document.querySelector('input[name="a"]').value;
         let b = document.querySelector('input[name="b"]').value;
@@ -146,19 +160,9 @@ document.getElementById('verify').addEventListener('click', function() {
         let result = (x >= Math.min(a, b) && x <= Math.max(a, b)) ? "X принадлежит заданному диапазону" : "X не принадлежит заданному диапазону";
         
         let url = `https://www.bing.com/search?q=search&formulation=Принадлежит+ли+целое+X+диапазону+A-B%3F+Если+принадлежит+-+отправить+все+на+сервер&a=${a}&b=${b}&c=${x}&result%22=${encodeURIComponent(result)}`;
-
-        fetch(url)
-            .then(response => {
-                if (response.ok) {
-                    alert("Ссылка успешно отправлена на сервер!");
-                } else {
-                    alert("Ошибка при отправке ссылки на сервер.");
-                }
-            })
-            .catch(error => {
-                console.error("Ошибка:", error);
-                alert("Произошла ошибка при отправке ссылки на сервер.");
-            });
+        
+        // Открытие ссылки в новой вкладке
+        window.open(url, '_blank');
     });
     
     document.getElementById('scrollToTop').addEventListener('click', function() {
