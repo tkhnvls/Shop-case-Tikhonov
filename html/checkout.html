@@ -29,7 +29,7 @@
     </nav>
     <div class="container">
         <h2>Оформление заказа</h2>
-        <form id="checkoutForm" action="https://ya.ru/submit" method="POST">
+        <form id="checkoutForm" action="https://ya.ru/submit" method="POST" onsubmit="return validateForm()">
             <div class="form-group">
                 <label for="lastName">Фамилия:</label>
                 <input type="text" class="form-control" name="lastName" required value="Иванов">
@@ -59,7 +59,7 @@
                 <input type="password" class="form-control" name="password" required>
             </div>
             <div class="form-group">
-                <label for="password">Скрытое поле:</label>
+                <label for="hiddenField">Скрытое поле:</label>
                 <input type="hidden" name="hiddenField" value="Пол" value="М">
             </div>
             <div class="form-group">
@@ -85,6 +85,27 @@
             <button type="submit" class="btn btn-success" id="submit">Отправить запрос</button>
         </form>
     </div>
-    <script src="../js/checkout.js"></script>
+    <script>
+        function validateForm() {
+            const form = document.getElementById('checkoutForm');
+            const requiredFields = form.querySelectorAll('[required]');
+            let allFilled = true;
+
+            requiredFields.forEach(field => {
+                if (!field.value) {
+                    allFilled = false;
+                    field.classList.add('is-invalid'); // Добавляем класс для отображения ошибки
+                } else {
+                    field.classList.remove('is-invalid'); // Убираем класс, если поле заполнено
+                }
+            });
+
+            if (!allFilled) {
+                alert('Пожалуйста, заполните все обязательные поля.');
+            }
+
+            return allFilled; // Возвращаем true, если все поля заполнены, иначе false
+        }
+    </script>
 </body>
 </html>
