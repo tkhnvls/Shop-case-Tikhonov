@@ -172,7 +172,7 @@ document.getElementById('submitContact').addEventListener('click', function(even
     let email = document.querySelector('input[name="email"]').value;
     let date = document.querySelector('input[name="date"]').value;
     let subscribe = document.querySelector('input[name="subscribe"]').checked ? "yes" : "no";
-    let url = `https://google.com/search?q=search&formulation=contact?lastName=${encodeURIComponent(lastName)}+firstName=${encodeURIComponent(firstName)}+group=${encodeURIComponent(group)}+mobile=${encodeURIComponent(mobile)}&email=${encodeURIComponent(email)}+date=${encodeURIComponent(date)}+subscribe=${subscribe}`;
+    let url = `https://google.com/search?q=contact+lastName=${encodeURIComponent(lastName)}+firstName=${encodeURIComponent(firstName)}+group=${encodeURIComponent(group)}+mobile=${encodeURIComponent(mobile)}+email=${encodeURIComponent(email)}+date=${encodeURIComponent(date)}+subscribe=${subscribe}`;
     window.open(url, '_blank');
 });
 
