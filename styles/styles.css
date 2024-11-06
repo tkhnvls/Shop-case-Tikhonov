@@ -159,8 +159,7 @@ input[type="tel"]:not(:placeholder-shown),
 input[type="email"]:not(:placeholder-shown),
 input[type="date"]:not(:placeholder-shown),
 input[type="password"]:not(:placeholder-shown) {
-    background-color: white !important;
-    color: black !important; 
+    color: grey !important; 
 }
 
 input[type="text"]:not(:placeholder-shown)::placeholder,
