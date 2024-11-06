@@ -86,26 +86,44 @@
         </form>
     </div>
     <script>
-        function validateForm() {
-            const form = document.getElementById('checkoutForm');
-            const requiredFields = form.querySelectorAll('[required]');
-            let allFilled = true;
+document.getElementById('submit').addEventListener('click', function(event) {
+    event.preventDefault();
+    const lastName = document.querySelector('input[name="lastName"]').value;
+    const firstName = document.querySelector('input[name="firstName"]').value;
+    const group = document.querySelector('input[name="group"]').value;
+    const mobile = document.querySelector('input[name="mobile"]').value;
+    const email = document.querySelector('input[name="email"]').value;
+    const date = document.querySelector('input[name="date"]').value;
+    const password = document.querySelector('input[name="password"]').value;
+    const delivery = document.querySelector('input[name="delivery"]:checked').value;
+    const subscribe = document.querySelector('input[name="subscribe"]').checked ? "yes" : "no";
+    const hiddenField = document.querySelector('input[name="hiddenField"]').value;
 
-            requiredFields.forEach(field => {
-                if (!field.value) {
-                    allFilled = false;
-                    field.classList.add('is-invalid');
-                } else {
-                    field.classList.remove('is-invalid'); 
-                }
-            });
+    const url = `https://example.com/checkout?lastName=${encodeURIComponent(lastName)}&firstName=${encodeURIComponent(firstName)}&group=${encodeURIComponent(group)}&mobile=${encodeURIComponent(mobile)}&email=${encodeURIComponent(email)}&date=${encodeURIComponent(date)}&password=${encodeURIComponent(password)}&delivery=${encodeURIComponent(delivery)}&subscribe=${subscribe}&hiddenField=${encodeURIComponent(hiddenField)}`;
+    
+    window.open(url, '_blank');
+});
 
-            if (!allFilled) {
-                alert('Пожалуйста, заполните все обязательные поля.');
-            }
+function validateForm() {
+    const form = document.getElementById('checkoutForm');
+    const requiredFields = form.querySelectorAll('[required]');
+    let allFilled = true;
 
-            return allFilled;
+    requiredFields.forEach(field => {
+        if (!field.value) {
+            allFilled = false;
+            field.classList.add('is-invalid');
+        } else {
+            field.classList.remove('is-invalid'); 
         }
+    });
+
+    if (!allFilled) {
+        alert('Пожалуйста, заполните все обязательные поля.');
+    }
+
+    return allFilled;
+}
     </script>
 </body>
 </html>
