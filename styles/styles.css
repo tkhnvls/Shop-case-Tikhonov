@@ -130,7 +130,6 @@ form {
 .form-group {
     margin-bottom: 15px;
 }
-
 input[type="text"],
 input[type="number"],
 input[type="tel"],
@@ -144,15 +143,35 @@ textarea {
     color: white !important;
     border: 1px solid #4CAF50 !important;
 }
-input[type="text"],
-input[type="number"],
-input[type="tel"],
-input[type="email"],
-input[type="date"],
-input[type="password"],
-textarea::placeholder {
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="email"]::placeholder,
+input[type="date"]::placeholder,
+input[type="password"]::placeholder {
     color: grey !important;
 }
+
+input[type="text"]:not(:placeholder-shown),
+input[type="number"]:not(:placeholder-shown),
+input[type="tel"]:not(:placeholder-shown),
+input[type="email"]:not(:placeholder-shown),
+input[type="date"]:not(:placeholder-shown),
+input[type="password"]:not(:placeholder-shown) {
+    background-color: white !important;
+    color: black !important; 
+}
+
+input[type="text"]:not(:placeholder-shown)::placeholder,
+input[type="number"]:not(:placeholder-shown)::placeholder,
+input[type="tel"]:not(:placeholder-shown)::placeholder,
+input[type="email"]:not(:placeholder-shown)::placeholder,
+input[type="date"]:not(:placeholder-shown)::placeholder,
+input[type="password"]:not(:placeholder-shown)::placeholder {
+    color: transparent;
+}
+
 input[type="button"],
 input[type="submit"] {
     padding: 5px 10px;
