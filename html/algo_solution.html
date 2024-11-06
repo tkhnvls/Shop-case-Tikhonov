@@ -46,7 +46,7 @@
                 <input type="number" class="form-control" name="x" value="15">
             </div>
             <button type="button" class="btn btn-primary" id="verify">Потвердить</button>
-            <button type="submit" class="btn btn-success" id="submit">Отправить</button>
+            <button type="button" class="btn btn-success" id="submit">Отправить</button>
         </form>
     </div>
     <script>
@@ -66,7 +66,19 @@
         });
 
         document.getElementById('submit').addEventListener('click', function() {
-            alert("Отправлено!");
+            let a = parseInt(document.querySelector('input[name="a"]').value);
+                        let b = parseInt(document.querySelector('input[name="b"]').value);
+            let x = parseInt(document.querySelector('input[name="x"]').value);
+            let low = Math.min(a, b);
+            let high = Math.max(a, b);
+
+            if (x >= low && x <= high) {
+                alert("Форма отправлена!");
+                // Здесь можно добавить код для фактической отправки формы, например:
+                // document.getElementById('taskForm').submit();
+            } else {
+                alert("X не принадлежит заданному промежутку [a, b]. Отправка невозможна.");
+            }
         });
     </script>
 </body>
