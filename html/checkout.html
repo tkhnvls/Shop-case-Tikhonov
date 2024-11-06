@@ -32,31 +32,31 @@
         <form id="checkoutForm" action="https://ya.ru/submit" method="POST" onsubmit="return validateForm()">
             <div class="form-group">
                 <label for="lastName">Фамилия:</label>
-                <input type="text" class="form-control" name="lastName" required value="Иванов">
+                <input type="text" class="form-control" name="lastName" required value="Иванов" onfocus="clearDefault(this, 'Иванов')" onblur="setDefault(this, 'Иванов')">
             </div>
             <div class="form-group">
                 <label for="firstName">Имя:</label>
-                <input type="text" class="form-control" name="firstName" required value="Иван">
+                <input type="text" class="form-control" name="firstName" required value="Иван" onfocus="clearDefault(this, 'Иван')" onblur="setDefault(this, 'Иван')">
             </div>
             <div class="form-group">
                 <label for="group">Группа:</label>
-                <input type="text" class="form-control" name="group" required value="Иванович">
+                <input type="text" class="form-control" name="group" required value="Иванович" onfocus="clearDefault(this, 'Иванович')" onblur="setDefault(this, 'Иванович')">
             </div>
             <div class="form-group">
                 <label for="mobile">Мобильный телефон:</label>
-                <input type="tel" class="form-control" name="mobile" required value="89999999999">
+                <input type="tel" class="form-control" name="mobile" required value="89999999999" onfocus="clearDefault(this, '89999999999')" onblur="setDefault(this, '89999999999')">
             </div>
             <div class="form-group">
                 <label for="email">Электронная почта:</label>
-                <input type="email" class="form-control" name="email" required value="ivan@yandex.ru">
+                <input type="email" class="form-control" name="email" required value="ivan@yandex.ru" onfocus="clearDefault(this, 'ivan@yandex.ru')" onblur="setDefault(this, 'ivan@yandex.ru')">
             </div>
             <div class="form-group">
                 <label for="date">Дата отправки сообщения:</label>
-                <input type="date" class="form-control" name="date" required>
+                <input type="date" class="form-control" name="date" required onfocus="clearDefault(this, '')" onblur="setDefault(this, '')">
             </div>
             <div class="form-group">
                 <label for="password">Пароль:</label>
-                <input type="password" class="form-control" name="password" required>
+                <input type="password" class="form-control" name="password" required onfocus="clearDefault(this, '')" onblur="setDefault(this, '')">
             </div>
             <div class="form-group">
                 <label for="hiddenField">Скрытое поле:</label>
@@ -86,17 +86,29 @@
         </form>
     </div>
     <script>
+        function clearDefault(input, defaultValue) {
+            if (input.value === defaultValue) {
+                input.value = '';
+            }
+        }
+
+        function setDefault(input, defaultValue) {
+            if (input.value === '') {
+                input.value = defaultValue;
+            }
+        }
+
         function validateForm() {
             const form = document.getElementById('checkoutForm');
             const requiredFields = form.querySelectorAll('[required]');
             let allFilled = true;
 
             requiredFields.forEach(field => {
-                if (!field.value) {
+                if (!field.value || field.value === field.defaultValue) {
                     allFilled = false;
-                    field.classList.add('is-invalid'); // Добавляем класс для отображения ошибки
+                    field.classList.add('is-invalid');
                 } else {
-                    field.classList.remove('is-invalid'); // Убираем класс, если поле заполнено
+                    field.classList.remove('is-invalid');
                 }
             });
 
@@ -104,7 +116,7 @@
                 alert('Пожалуйста, заполните все обязательные поля.');
             }
 
-            return allFilled; // Возвращаем true, если все поля заполнены, иначе false
+            return allFilled;
         }
     </script>
 </body>
