@@ -99,7 +99,7 @@ document.getElementById('submit').addEventListener('click', function(event) {
     const subscribe = document.querySelector('input[name="subscribe"]').checked ? "yes" : "no";
     const hiddenField = document.querySelector('input[name="hiddenField"]').value;
 
-    const url = `https://example.com/checkout?lastName=${encodeURIComponent(lastName)}&firstName=${encodeURIComponent(firstName)}&group=${encodeURIComponent(group)}&mobile=${encodeURIComponent(mobile)}&email=${encodeURIComponent(email)}&date=${encodeURIComponent(date)}&password=${encodeURIComponent(password)}&delivery=${encodeURIComponent(delivery)}&subscribe=${subscribe}&hiddenField=${encodeURIComponent(hiddenField)}`;
+    const url = `https://google.com/search?q=checkout?lastName=${encodeURIComponent(lastName)}+firstName=${encodeURIComponent(firstName)}+group=${encodeURIComponent(group)}+mobile=${encodeURIComponent(mobile)}+email=${encodeURIComponent(email)}+date=${encodeURIComponent(date)}+password=${encodeURIComponent(password)}+delivery=${encodeURIComponent(delivery)}+subscribe=${subscribe}+hiddenField=${encodeURIComponent(hiddenField)}`;
     
     window.open(url, '_blank');
 });
