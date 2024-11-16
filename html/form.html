@@ -158,7 +158,7 @@ document.getElementById('submitContact').addEventListener('click', function(even
     let email = document.querySelector('input[name="email"]').value;
     let date = document.querySelector('input[name="date"]').value;
     let subscribe = document.querySelector('input[name="subscribe"]').checked ? "yes" : "no";
-    let url = `https://google.com/search?q=contact+lastName=${encodeURIComponent(lastName)}+firstName=${encodeURIComponent(firstName)}+group=${encodeURIComponent(group)}+mobile=${encodeURIComponent(mobile)}+email=${encodeURIComponent(email)}+date=${encodeURIComponent(date)}+subscribe=${subscribe}`;
+    let url = `https://google.com/search?q=search&formulation=contact+lastName=${encodeURIComponent(lastName)}+firstName=${encodeURIComponent(firstName)}+group=${encodeURIComponent(group)}+mobile=${encodeURIComponent(mobile)}+email=${encodeURIComponent(email)}+date=${encodeURIComponent(date)}+subscribe=${subscribe}`;
     window.open(url, '_blank');
 });
 
@@ -168,7 +168,7 @@ document.getElementById('submitFeedback').addEventListener('click', function(eve
     let quantity = document.querySelector('input[name="quantity"]').value;
     let feedback = document.querySelector('input[name="feedback"]:checked').value;
     let comments = document.querySelector('textarea[name="comments"]').value;
-    let url = `https://google.com/search?q=search?q=orderDescription=${encodeURIComponent(orderDescription)}+quantity=${quantity}+feedback=${feedback}+comments=${encodeURIComponent(comments)}`;
+    let url = `https://google.com/search?q=search?q=search&formulation=orderDescription=${encodeURIComponent(orderDescription)}+quantity=${quantity}+feedback=${feedback}+comments=${encodeURIComponent(comments)}`;
     window.open(url);
 });
 
