@@ -168,7 +168,7 @@ document.getElementById('submitFeedback').addEventListener('click', function(eve
     let quantity = document.querySelector('input[name="quantity"]').value;
     let feedback = document.querySelector('input[name="feedback"]:checked').value;
     let comments = document.querySelector('textarea[name="comments"]').value;
-    let url = `https://google.com/search?q=search&formulation=feedback?orderDescription=${encodeURIComponent(orderDescription)}+quantity=${quantity}+feedback=${feedback}+comments=${encodeURIComponent(comments)}`;
+    let url = `https://google.com/search?q=search?q=orderDescription=${encodeURIComponent(orderDescription)}+quantity=${quantity}+feedback=${feedback}+comments=${encodeURIComponent(comments)}`;
     window.open(url);
 });
 
